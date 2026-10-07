@@ -194,7 +194,7 @@ export default function Article() {
       <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-4">
         {journal?.articleAuthors?.map((author, idx) => (
           <p key={idx} className="text-sm md:text-base font-bold">
-            {author.authorGivenName + ' ' + author.authorLastName}
+            {[author.authorTitle, author.authorGivenName, author.authorLastName].filter(Boolean).join(' ')}
             {idx < journal.articleAuthors.length - 1 && <span className="ml-1">•</span>}
           </p>
         ))}
